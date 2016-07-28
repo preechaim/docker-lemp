@@ -1,0 +1,21 @@
+FROM ubuntu:16.04
+
+RUN apt-get update && apt-get install -y \
+	php7.0 \
+	php7.0-cli \
+	php7.0-common \
+	php7.0-fpm \
+	php7.0-curl \
+	php7.0-gd \
+	php7.0-intl \
+	php7.0-zip \
+	php7.0-xsl \
+	php7.0-mbstring \
+	php7.0-json \
+	php7.0-mysql \
+	php-gettext
+
+#ADD conf/php.ini /usr/local/etc/php/php.ini
+#ADD conf/php-fpm.www.conf /etc/php/7.0/fpm/pool.d/www.conf
+RUN service php7.0-fpm start
+CMD php-fpm7.0 -F -O
