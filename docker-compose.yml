@@ -28,7 +28,7 @@ mariadb:
         - ./mysql/:/var/lib/mysql
     environment:
         ### Set username and passwords on new database files.
-        ### (No effect, if database files is already existed)
+        ### (No effect, if database files are already existed)
         - MYSQL_ROOT_PASSWORD=NEW_R00T_PASSWORD
         - MYSQL_USER=newuser
         - MYSQL_PASSWORD=newpassword
