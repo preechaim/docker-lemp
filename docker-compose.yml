@@ -21,9 +21,9 @@ services:
             - ./conf/php-fpm.php.ini:/usr/local/etc/php/php.ini
             - ./conf/php-fpm.www.conf:/etc/php/7.0/fpm/pool.d/www.conf
         links:
-            - mariadb
+            - mysql
 
-    mariadb:
+    mysql:
         image: mariadb
         ports:
             - 3306:3306 # Optional, for remote access.
@@ -36,11 +36,11 @@ services:
             - MYSQL_USER=newuser
             - MYSQL_PASSWORD=newpassword
 
-    ### No SSL, may not safe to run on public server
-    #phpmyadmin:
-    #    image: phpmyadmin/phpmyadmin
-    #    ports:
-    #        - 8080:80
-    #    links:
-    #        - mariadb:db
+    ## No SSL, may not safe to run on public server
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - 8080:80
+        links:
+            - mysql:db
 
