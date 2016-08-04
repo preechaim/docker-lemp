@@ -3,6 +3,7 @@ A docker-compose of LEMP stack, separated on multiple containers.
 
 **L**inux + NGINX(**E**ngine-X) + MariaDB(**M**ySQL fork) + **P**HP7
 
+## Instructions
 1. Install Docker Compose.  
 https://docs.docker.com/compose/install/  
 
@@ -15,7 +16,7 @@ https://docs.docker.com/compose/install/
 > $ cd docker-lemp  
 > $ docker-compose up -d  
 
-  Test the server by open your web browser to `http://localhost` or `http://YOUR_SERVER_IP`
+  Test the server by opening your web browser to `http://localhost` or `http://YOUR_SERVER_IP`
 
 6. Make the server to auto start at boot. (for Linux)  
   Open crontab file  
@@ -26,3 +27,9 @@ https://docs.docker.com/compose/install/
 
   Save, exit and reboot.  
 > $ sudo reboot  
+
+## Directories
+- html: Web server root
+- conf: Contains configuration files
+- mysql: Contains MySQL database files (create on first run)
+- logs: Contains NGINX logs (create on first run)
