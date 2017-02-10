@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
 	php7.0-mbstring \
 	php7.0-json \
 	php7.0-mysql \
+	php-imagick \
 	php-gettext
 
 #ADD conf/php.ini /usr/local/etc/php/php.ini
